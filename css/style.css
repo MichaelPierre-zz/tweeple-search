@@ -1,0 +1,137 @@
+aside,article,section,header,footer,nav {
+	display: block;
+}
+
+html,body,div,h1,h2,h3,p {	
+	margin: 0;
+	padding: 0;		
+}
+
+@media only screen and (max-width: 480px) {
+p{
+	width: 90%;
+	padding: 20px;	
+	color: white;
+	background: rgb(117,15,25);	
+}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+p {
+	width: 95%;
+	padding: 40px;	
+	color: white;
+	background: rgb(115, 160, 88);
+}
+}
+
+@media only screen and (min-width: 769px) {
+#container-home {	
+	position: absolute;
+	margin-top: -20px;	
+	background-color: black;
+	height: 660px;
+	width: 100%;	
+}
+
+#content-home {
+	position: relative;
+	margin: 122.5px auto;
+	background-color: black;
+	width: 500px;	
+	height: 310.5px;
+	
+}
+
+#bird {			
+	float: left;
+	width: 38.2%;
+	height: 100%;
+	background-image:url('../images/twitter-bird-dark-bgs-200x200.png'); 
+	background-repeat: no-repeat;	
+	border-radius: 20px 0 0 20px;
+}
+
+#form-home {	
+	float: right;
+	width: 60%;
+	height: 100%;	
+	background-color: #4099FF;		
+}
+
+#input-home {
+	padding: 30px 30px 15px 40px;	
+}
+
+#submit-home {
+	padding: 0px 30px 30px 40px;
+}
+
+.input-field {
+	width: 200px;
+	height: 40px;
+}
+
+.button {
+	width: 200px;
+	height: 40px;	
+	color: white;
+	background-color: black;
+}
+
+
+
+/* search_page3.php */
+#container-result {
+	position: absolute;
+	margin-top: -20px;	
+	background-color: white;
+	height: 660px;
+	width: 100%;	
+}
+
+#content-result {
+	position: relative;
+	margin: 20px auto;
+	background-color: #999999;
+	width: 800px;		
+	height: 1400px;
+	padding: 20px;
+}
+
+
+#stackit {				
+		width: 800px;				
+		height: 200px;		
+}
+
+#profile-image {	
+	text-align: center;	
+}
+
+#name {	
+	font-size: 20px;
+	text-align: center;
+}
+
+#screen-name {	
+	font-size: 16px;		
+	text-align: center;
+}
+
+
+#description {
+	font-size: 16px;
+	text-align: center;
+}
+
+#friend-count {
+	
+}
+
+#follower-count {
+	
+}
+
+
+}
