@@ -5,18 +5,140 @@ aside,article,section,header,footer,nav {
 html,body,div,h1,h2,h3,p {	
 	margin: 0;
 	padding: 0;		
+	font-family: Times, Times New Roman, serif;
 }
 
 @media only screen and (max-width: 480px) {
-p{
-	width: 90%;
-	padding: 20px;	
-	color: white;
-	background: rgb(117,15,25);	
+body {
+	background-color: #404040;
+	font-size: .8em;
 }
+
+header {	
+	margin: 0;
+	height: 50px;	
+	
+}
+
+#logo-container {		
+	margin: 0 0 15px 0;
+	padding: 5% 0;	
+	height: 152px;		
+}
+
+#logo {		
+	margin: 0 auto;
+	width: 142px;
+	height: 142px;		
+	background-image:url('../images/twitter-bird-dark-bgs-SMALL.png');
+	background-repeat: no-repeat; 	
+}
+
+.input-parent {		
+	margin: 0 0 15px 0;		
+}
+
+.input-child {	
+	width: 345px;
+	margin: 0 auto;	
+}
+
+.input-field {	
+	width: 345px;
+	height: 35px;	
+	border-radius: 10px;
+}
+
+.submit-parent {			
+}
+
+.submit-child {
+	border: 3px black solid;
+	margin: 0 auto;
+	width: 135px;
+	height: 35px;	
+}
+
+
+
+/* Targets Search_page3.php */
+#header-result {
+	margin: 0;
+	height: 100px;
+}
+
+#container-result {
+	
+}
+
+section#content-container {
+	background-color: #fff;
+}
+
+#user-summary {	
+}
+
+#profile-image-parent {	
+	margin: 15px 0 0 0;	
+}
+
+#profile-image-child {		
+	margin: 15px auto 7.5px auto;	/* not working 100% */
+	width: 48px;
+	height: 48px;
+}
+
+#real-name {	
+	margin: 0;
+	font-size: 1.2em;
+	font-weight: bold;	
+	text-align: center;
+}
+
+#screen-name {	
+	margin: 0;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+
+#description {
+	margin: 0 10px 0 10px;
+	font-size: 1em;	
+	text-align: center;
+}
+
+#friend-follower-container {		
+	margin: 0 0 15px 0;
+	font-size: 1em;
+	text-align: center;	
+}
+
+#friend-count {
+	display: inline;
+	margin: 0 2px 0 0;	
+}
+
+#follower-count {
+	display: inline;
+	margin: 0 0 0 2px;	
+}
+
+#user-timeline {
+	margin: 10px;
+}
+
+#user-favorites {
+	margin: 10px;
+}
+
+
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+body {
+	font-size: 1em;
+}
 p {
 	width: 95%;
 	padding: 40px;	
@@ -26,6 +148,9 @@ p {
 }
 
 @media only screen and (min-width: 769px) {
+body {
+	font-size: 1.2em;
+}
 #container-home {	
 	position: absolute;
 	margin-top: -20px;	
