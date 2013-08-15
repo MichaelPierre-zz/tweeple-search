@@ -10,7 +10,7 @@
 	<div id="container-result">			
 	<?php echo validation_errors(); ?>
 	<?php echo form_open('index.php/search/index'); ?>
-		<header>
+		<header id="header-result">
 		<div class="input-parent">
 		<div class="input-child">
 			<input type="input" name="username" placeholder="@UserName" class="input-field" />			
