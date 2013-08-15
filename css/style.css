@@ -5,7 +5,8 @@ aside,article,section,header,footer,nav {
 html,body,div,h1,h2,h3,p {	
 	margin: 0;
 	padding: 0;		
-	font-family: Times, Times New Roman, serif;
+	font-family: Verdana, sans-serif;
+	font-size: 14px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -47,6 +48,7 @@ header {
 	width: 345px;
 	height: 35px;	
 	border-radius: 10px;
+	outline: none;
 }
 
 .submit-parent {			
@@ -149,114 +151,132 @@ p {
 
 @media only screen and (min-width: 769px) {
 body {
+	background-color: #fff;
 	font-size: 1.2em;
 }
-#container-home {	
-	position: absolute;
-	margin-top: -20px;	
-	background-color: black;
-	height: 660px;
-	width: 100%;	
+
+header {		
+	margin: 10 0;			
 }
 
-#content-home {
-	position: relative;
-	margin: 122.5px auto;
-	background-color: black;
-	width: 500px;	
-	height: 310.5px;
+#logo-container {	
+	height: 220px;
+	margin: 0 0 10px 0;	
+}
+
+#logo {
+	height: 198px;
+	width: 198px;
+	background-image:url('../images/twitter-bird-dark-bgs-LARGE.png');
+	background-repeat: no-repeat;	
+	margin: 0 auto;	
+}
+
+.input-parent {			
+	height: 60px;		
 	
 }
 
-#bird {			
-	float: left;
-	width: 38.2%;
-	height: 100%;
-	background-image:url('../images/twitter-bird-dark-bgs-200x200.png'); 
-	background-repeat: no-repeat;	
-	border-radius: 20px 0 0 20px;
+.input-child {		
+	width: 300px;
+	margin: 0 auto;	
 }
 
-#form-home {	
-	float: right;
-	width: 60%;
-	height: 100%;	
-	background-color: #4099FF;		
+.input-field {	
+	width: 300px;
+	height: 35px;		
+	border-radius: 20px;
+	outline: none;
 }
 
-#input-home {
-	padding: 30px 30px 15px 40px;	
+.submit-parent {				
+	height: 60px;	
 }
 
-#submit-home {
-	padding: 0px 30px 30px 40px;
-}
-
-.input-field {
-	width: 200px;
-	height: 40px;
-}
-
-.button {
-	width: 200px;
-	height: 40px;	
-	color: white;
-	background-color: black;
+.submit-child {
+	width: 140px;
+	height: 35px;
+	margin: 0 auto;	
+	border: 3px black solid;
 }
 
 
 
-/* search_page3.php */
+/* Targets Search_page3.php */
+
 #container-result {
-	position: absolute;
-	margin-top: -20px;	
-	background-color: white;
-	height: 660px;
+	
+}
+
+section#content-container {
+	
+}
+
+#user-summary-container {
 	width: 100%;	
+	margin: 10 0;
 }
 
-#content-result {
-	position: relative;
-	margin: 20px auto;
-	background-color: #999999;
-	width: 800px;		
-	height: 1400px;
-	padding: 20px;
-}
-
-
-#stackit {				
-		width: 800px;				
-		height: 200px;		
-}
-
-#profile-image {	
-	text-align: center;	
-}
-
-#name {	
-	font-size: 20px;
+#user-summary {		
+	width: 460px;	
+	margin: 0 auto;
 	text-align: center;
+	padding: 5px;
+}
+
+#profile-image-parent {	
+	
+}
+
+#profile-image-child {		
+	
+}
+
+#real-name {	
+	
 }
 
 #screen-name {	
-	font-size: 16px;		
-	text-align: center;
+	
 }
 
-
 #description {
-	font-size: 16px;
-	text-align: center;
+	
+}
+
+#friend-follower-container {	
+	
 }
 
 #friend-count {
-	
+	display: inline;	
+	margin: 0 2px 0 0;
 }
 
 #follower-count {
-	
+	display: inline;
+	margin: 0 0 0 2px;
 }
 
+#tweets-container {
+	width: 100%;	
+}
 
+#user-tweets {	
+	height: 2000px; /* check this */
+	width: 65%;	
+	margin: 0 auto;
+}
+
+#user-timeline {	
+	width: 44%; 
+	float: left;	
+	padding: 5px;
+}
+
+#user-favorites {	
+	width: 44%;
+	float: right;	
+	padding: 5px;
+}
 }

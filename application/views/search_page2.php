@@ -12,8 +12,7 @@
 				</div>
 				<div id="form-home">
 				<?php echo form_open('index.php/search/index'); ?>				
-					<header>
-					<h1>Tweeple Search</h1>
+					<header>					
 					</header>
 					
 					<div id="logo-container">

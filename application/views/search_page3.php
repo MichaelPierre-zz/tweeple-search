@@ -10,7 +10,7 @@
 	<div id="container-result">			
 	<?php echo validation_errors(); ?>
 	<?php echo form_open('index.php/search/index'); ?>
-		<header id="header-result">
+		<header>
 		<div class="input-parent">
 		<div class="input-child">
 			<input type="input" name="username" placeholder="@UserName" class="input-field" />			
@@ -19,12 +19,13 @@
 		
 		<div class="submit-parent">
 		<div class="submit-child">
-			<p><input type="submit" name="submit" value="Search" class="button" /></p>		
+			<input type="submit" name="submit" value="Search" class="button" />
 		</div>
 		</div>
 		</header>
 		</form>
-		<section id="content-container">			
+		<section id="content-container">
+			<div id="user-summary-container">
 			<div id="user-summary">
 
 			<div id="profile-image-parent">
@@ -54,7 +55,9 @@
 			</div>
 			</div>
 			
-			</div>			
+			</div>	
+			</div>
+			<div id="tweets-container">	
 			<div id="user-tweets">
 			<div id="user-timeline">
 				<p>Recent Tweets:</p>
@@ -87,11 +90,13 @@
 				}
 				}
 				?></p>
+			
 			</div>
 			</div>
 			<footer>
 			</footer>
 		</section>	
+		</div>
 	</div>			
 </body>
 </html>
