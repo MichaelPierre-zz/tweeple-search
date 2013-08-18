@@ -35,11 +35,11 @@
 			</div>			
 			
 			<div id="real-name">
-				<p><?php echo $data['name']; ?></p>				
+				<h1><?php echo $data['name']; ?></h1>				
 			</div>			
 			
 			<div id="screen-name">
-				<p><?php echo '@' . $data['screen_name']; ?></p>
+				<h2><?php echo '@' . $data['screen_name']; ?></h2>
 			</div>
 			
 			<div id="description">
@@ -60,8 +60,8 @@
 			<div id="tweets-container">	
 			<div id="user-tweets">
 			<div id="user-timeline">
-				<p>Recent Tweets:</p>
-				<p><?php
+				<h1>Recent Tweets</h1>
+				<p class="tweets"><?php
 				$user_timeline = $data['timeline'];
 				
 				if(count( $user_timeline ) == 0){
@@ -76,7 +76,7 @@
 				?></p>
 			</div>
 			<div id="user-favorites">
-				<p>Favorites:</p>
+				<h1>Favorites</h1>
 				<p><?php
 				$favorites_list = $data['fav'];				
 				
