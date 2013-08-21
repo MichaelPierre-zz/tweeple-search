@@ -59,26 +59,28 @@ class Search extends CI_Controller {
 				$data['data'] = $data;									
 				$this->view('search_page3',$data);								
 			} else {
-				//$data['user_not_found_error'] = $username . " does not exist.";
-				//$this->view('search_page2', $data);
-				echo $username . " does not exist.";
+				// To do: pass error 'user not found'
+				$data['user_not_found_error'] = $username . " does not exist.";
+				$this->view('search_page2', $data);				
 			}			
 		}				
 	}	
 	
 	private function val_username($username)
 	{		
+		
 		return (bool)preg_match('/^([a-zA-Z0-9_]|^@[a-zA-Z0-9_]){1,20}$/', $username);				
 	}
 	
 	function screen_name_exists($username, $friends_list) 
 	{
+		// todo: check for '@' and remove it
 		if( array_key_exists('screen_name', $friends_list) && strtolower($friends_list['screen_name']) == $username)		
 			return true;		
 		elseif (array_key_exists('errors', $friends_list) && $friends_list['errors'][0]['code'] == 34 ) // error code 34: Page does not exist
 			return false;
 		else {			
-			echo "An error occured in screen_name_exists();";
+			echo "An error occured in screen_name_exists();";			
 			return false;
 		}
 	}

@@ -22,9 +22,9 @@ header {
 }
 
 #logo-container {		
-	margin: 0 0 15px 0;
+	margin: 0;
 	padding: 5% 0;	
-	height: 152px;		
+	height: 142px;		
 }
 
 #logo {		
@@ -32,34 +32,47 @@ header {
 	width: 142px;
 	height: 142px;		
 	background-image:url('../images/twitter-bird-dark-bgs-SMALL.png');
-	background-repeat: no-repeat; 	
+	background-repeat: no-repeat; 		
 }
 
 .input-parent {		
-	margin: 0 0 15px 0;		
+	margin: 0 0 15px 0;			
 }
 
-.input-child {	
-	width: 345px;
-	margin: 0 auto;	
+.input-child {		
+	width: 270px;
+	margin: 0 auto;		
 }
 
-.input-field {	
-	width: 345px;
-	height: 35px;	
-	border-radius: 10px;
+.input-field {		
+	width: 270px;
+	height: 35px;		
 	outline: none;
+	margin: 0 auto;	
 }
 
 .submit-parent {			
 }
 
-.submit-child {
-	border: 3px black solid;
-	margin: 0 auto;
+.submit-child {	
 	width: 135px;
-	height: 35px;	
+	height: 35px;
+	margin: 0 auto;		
 }
+
+.button {
+	display:block;
+	width:135px;
+	height: 35px;
+	text-indent:-9999px;
+	background:transparent url(../images/button-sprite.gif) no-repeat top left;	
+	outline:none;
+}
+
+.button:hover {
+	background-position: 0 -35px;
+}
+
 
 
 
@@ -188,20 +201,32 @@ header {
 
 .input-field {	
 	width: 345px;
-	height: 35px;	
-	border-radius: 10px;
+	height: 35px;		
 	outline: none;
 }
 
 .submit-parent {			
 }
 
-.submit-child {
-	border: 3px black solid;
-	margin: 0 auto;
+.submit-child {	
 	width: 135px;
-	height: 35px;	
+	height: 35px;
+	margin: 0 auto;		
 }
+
+.button {
+	display:block;
+	width:135px;
+	height: 35px;
+	text-indent:-9999px;
+	background:transparent url(../images/button-sprite.gif) no-repeat top left;	
+	outline:none;
+}
+
+.button:hover {
+	background-position: 0 -35px;
+}
+
 
 
 
@@ -331,29 +356,38 @@ header {
 
 .input-field {	
 	width: 300px;
-	height: 35px;		
-	border-radius: 20px;
+	height: 35px;				
 	outline: none;
 }
 
 .submit-parent {				
-	height: 60px;	
+	height: 60px;		
 }
 
-.submit-child {
-	width: 140px;
+.submit-child {	
+	width: 135px;
 	height: 35px;
-	margin: 0 auto;	
-	border: 3px black solid;
+	margin: 0 auto;		
 }
 
+.button {
+	display:block;
+	width:135px;
+	height: 35px;
+	text-indent:-9999px;
+	background:transparent url(../images/button-sprite.gif) no-repeat top left;	
+	outline:none;
+}
+
+.button:hover {
+	background-position: 0 -35px;
+}
 
 
 /* Targets Search_page3.php */
 
 * {
-	color: #404040;
-	
+	color: #404040;	
 }
 
 #container-result {
