@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Twitter App</title>		
+	<title>Tweeple Search</title>		 
+	<link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo base_url();?>css/style.css" type="text/css" media="screen" />
 </head>
 <body>	
@@ -11,6 +12,12 @@
 	<?php echo validation_errors(); ?>
 	<?php echo form_open('index.php/search/index'); ?>
 		<header id="header-result">
+		
+		<div id="app-name">
+			<p>Tweeple Search</p>			
+		</div>
+		
+		
 		<div class="input-parent">
 		<div class="input-child">
 			<input type="input" name="username" placeholder="@UserName" class="input-field" />			
@@ -22,6 +29,8 @@
 			<input type="submit" name="submit" value="Search" class="button" />
 		</div>
 		</div>
+		
+		
 		</header>
 		</form>
 		<section id="content-container">
