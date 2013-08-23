@@ -18,6 +18,7 @@ class Search extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		
+		
 		$settings = array(
 			'oauth_access_token' => $this->config->item('oauth_access_token'),
 			'oauth_access_token_secret' => $this->config->item('oauth_access_token_secret'),
@@ -29,8 +30,10 @@ class Search extends CI_Controller {
 				
 		$this->form_validation->set_rules('username', 'username', 'required');
 		$username = strtolower($this->input->post('username'));	
-				
-		if($this->form_validation->run() === FALSE || $this->val_username($username) === FALSE)
+		
+		$trimmed_username = $this->trim_space_at_sign($username);
+		
+		if($this->form_validation->run() === FALSE || $this->val_username($trimmed_username) === FALSE)
 		{
 			$data = 'Validation Problems';			
 			$this->view('search_page2',$data);
@@ -40,11 +43,11 @@ class Search extends CI_Controller {
 			$user_timeline_url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
 			$favorites_list_url = 'https://api.twitter.com/1.1/favorites/list.json';
 						
-			$friends_list = json_decode($this->get_user_data($username, $twitter, $friends_list_url), true);
-			$user_timeline = json_decode($this->get_user_data($username, $twitter, $user_timeline_url), true);
-			$favorites_list = json_decode($this->get_user_data($username, $twitter, $favorites_list_url), true);						
-						
-			if ( $this->screen_name_exists($username, $friends_list) ) {
+			$friends_list = json_decode($this->get_user_data($trimmed_username, $twitter, $friends_list_url), true);
+			$user_timeline = json_decode($this->get_user_data($trimmed_username, $twitter, $user_timeline_url), true);
+			$favorites_list = json_decode($this->get_user_data($trimmed_username, $twitter, $favorites_list_url), true);						
+												
+			if ( $this->screen_name_exists($trimmed_username, $friends_list) ) {
 				$data['profile_image_url'] = $friends_list['profile_image_url'];
 				$data['name'] = $friends_list['name'];				
 				$data['screen_name'] = $friends_list['screen_name'];
@@ -56,38 +59,42 @@ class Search extends CI_Controller {
 				$data['timeline'] = $user_timeline;								
 				$data['fav'] = $favorites_list;				
 			
-				$data['data'] = $data;									
+				$data['data'] = $data;				
 				$this->view('search_page3',$data);								
 			} else {
 				// To do: pass error 'user not found'
-				$data['user_not_found_error'] = $username . " does not exist.";
+				$data['user_not_found_error'] = $trimmed_username . " does not exist.";
 				$this->view('search_page2', $data);				
 			}			
 		}				
 	}	
 	
-	private function val_username($username)
+	function val_username($trimmed_username)
 	{		
+		return (bool)preg_match('/^([a-zA-Z0-9_]){1,20}$/', $trimmed_username);				
+	}
 		
-		return (bool)preg_match('/^([a-zA-Z0-9_]|^@[a-zA-Z0-9_]){1,20}$/', $username);				
+	function trim_space_at_sign($username)
+	{		
+		return ltrim(str_replace(' ', '', $username), "@");
 	}
 	
-	function screen_name_exists($username, $friends_list) 
-	{
-		// todo: check for '@' and remove it
-		if( array_key_exists('screen_name', $friends_list) && strtolower($friends_list['screen_name']) == $username)		
+	function screen_name_exists($trimmed_username, $friends_list) 
+	{			
+		if( array_key_exists('screen_name', $friends_list) && strtolower($friends_list['screen_name']) == $trimmed_username)		
 			return true;		
 		elseif (array_key_exists('errors', $friends_list) && $friends_list['errors'][0]['code'] == 34 ) // error code 34: Page does not exist
 			return false;
 		else {			
-			echo "An error occured in screen_name_exists();";			
+			echo "An error occured in screen_name_exists();";
+			
 			return false;
 		}
 	}
 	
-	private function get_user_data($username, $twitter, $url)
+	function get_user_data($trimmed_username, $twitter, $url)
 	{
-		$getfield = '?screen_name=' . $username;		
+		$getfield = '?screen_name=' . $trimmed_username;		
 		$request_method = 'GET';						
 				
 		return $twitter->setGetfield($getfield)
