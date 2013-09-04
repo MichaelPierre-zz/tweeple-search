@@ -4,7 +4,12 @@
 	<meta charset="utf-8">
 	<title>Tweeple Search</title>		 
 	<link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="<?php echo base_url();?>css/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo base_url();?>css/style.css" type="text/css" media="screen" />	
+	
+	
+	<script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="scripts/script2.js"></script>	
+	
 </head>
 <body>	
 	
@@ -20,7 +25,7 @@
 		
 		<div class="input-parent">
 		<div class="input-child">
-			<input type="input" name="username" placeholder="@UserName" class="input-field" />			
+			<input type="input" name="username" class="input-field" />		
 		</div>
 		</div>
 		

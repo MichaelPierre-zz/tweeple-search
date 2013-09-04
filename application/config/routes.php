@@ -41,6 +41,6 @@
 $route['default_controller'] = "search";
 $route['404_override'] = '';
 
-
+$route['search/(:any)'] = "search/index/$1";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

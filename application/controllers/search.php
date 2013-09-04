@@ -16,8 +16,7 @@ class Search extends CI_Controller {
 		$this->load->library('encrypt');
 		$this->config->load('twitter_settings');
 		$this->load->helper('form');
-		$this->load->library('form_validation');
-		
+		$this->load->library('form_validation');		
 		
 		$settings = array(
 			'oauth_access_token' => $this->config->item('oauth_access_token'),
@@ -73,7 +72,8 @@ class Search extends CI_Controller {
 	{		
 		return (bool)preg_match('/^([a-zA-Z0-9_]){1,20}$/', $trimmed_username);				
 	}
-		
+	
+	// removes @ sign and space in screen name
 	function trim_space_at_sign($username)
 	{		
 		return ltrim(str_replace(' ', '', $username), "@");

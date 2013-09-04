@@ -1,13 +1,13 @@
 $(document).ready(function() {
-	$(".input-field").attr("value","I'm looking for...");
+	$(".input-field").attr("value","Enter Twitter Name");
 	
-	var text = "I'm looking for...";
+	var text = "Enter Twitter Name";
 	
-	$(".input-field").focus(function() {
+	$(document).on('focusin',".input-field",function(){
 		$(this).addClass("active");
 		if($(this).attr("value") == text) $(this).attr("value", "");
 	});
-	$(".input-field").blur(function() {
+	$(document).on('focusout', ".input-field", function(){
 		$(this).removeClass("active");
 		if($(this).attr("value") == "") $(this).attr("value", text);
 	});
